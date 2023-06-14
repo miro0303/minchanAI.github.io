@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>김민찬 AI</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #00c6ff;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+        }
+
+        .input-field {
+            margin-bottom: 10px;
+            padding: 8px;
+            font-size: 14px;
+            width: 300px;
+            height: 21px;
+            border: 0px transparent;
+            border-radius: 100px;
+            z-index: 1;
+        }
+
+        .input-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .message-box {
+            width: 400px;
+            height: 50px;
+            border: 2px solid transparent;
+            border-radius: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+            background-color: #f8f8f8;
+        }
+
+        .button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            font-size: 16px;
+            background-color: #000000;
+            color: #fff;
+            border: transparent;
+            border-radius: 100px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #595959;
+        }
+
+        .button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      </br>
+    <img src="https://i.ibb.co/mhjMtZ8/image.png" alt="image" border="0" style="width: 100px; height: auto; position: relative; top: 30px;">
+  <br>
+
+<img src="https://i.ibb.co/mBfKRsb/001-1.png" alt="001-1" border="0" style= "width: 50px; height: auto; transform: rotate(180deg); position: relative; top: 20px;">
+   <div id="message" class="message-box" style="font-size: 10px; position: relative; left: 70px;";></div>
+    <input type="text" id="myInput" placeholder="김민찬 AI에게 물어보세요!" class="input-field">
+        <button onclick="showMessage()" class="button">보내기</button>
+  <br>
+  <span style="color: #595959; font-size: 15px; font-family: Gulim";>아직 배우는 중이에요. 답변 가능한 질문: minus의 유래, 개발자 정보, 간단한 인사 </span>
+
+    <script>
+        function showMessage() {
+            var inputText = document.getElementById("myInput").value;
+            var messageElement = document.getElementById("message");
+            if (inputText) {
+  if (inputText == "안녕" || inputText == "안녕?" || inputText == "안녕." || inputText == "안녕하세요?" || inputText == "안녕하세요" || inputText == "안녕하세요.") {
+    messageElement.innerHTML = "안녕하세요! 챗봇 김민찬입니다. 무엇을 도와드릴까요?";
+  } else if (inputText == "minus의 유래") {
+    messageElement.innerHTML = "minus는 백현중 3학년 6반 김민찬군의 동아리에서 시작됐습니다.";
+  } else if (inputText == "개발자 정보") {
+    messageElement.innerHTML = "제 개발자는 신주환으로 중3 천재 프로그래머입니다.";
+  } else if (inputText == "잘 가" || inputText == "잘가" || inputText == "또보자" || inputText == "또 보자" || inputText == "또보자." || inputText == "또 보자.") {
+    messageElement.innerHTML = "감사합니다! 다음에 봬요!";
+  } else if (inputText == "간단한 인사") {
+    messageElement.innerHTML = "그걸 말한게 아니잖아요..."
+  } else if (inputText == "dkssud") {
+    messageElement.innerHTML = "음.. 안녕이요?";
+  } else if (inputText == "고마워" || inputText == "고마워!" || inputText == "고마워." || inputText == "감사합니다" || inputText == "감사합니다!" ||inputText == "감사합니다.") {
+    messageElement.innerHTML = "도움이 되셨다니 다행입니다!"
+  } else {
+    messageElement.innerHTML = "이해하지 못했어요.";
+  }
+              messageElement.style.backgroundColor = "#ffffff";
+            } else {
+                // 입력된 메시지가 없는 경우 기본 메시지를 출력
+                messageElement.innerHTML = "김민찬은 말했다: 무엇이든지 물어보세요";
+                messageElement.style.backgroundColor = "#ffffff";
+            }
+        }
+    </script>
+</body>
+</html>
+
